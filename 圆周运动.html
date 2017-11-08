@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				
+				/* 圆球*/
+				border-radius: 50%;
+				
+				position: absolute;
+				left: 300px;
+				top: 200px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+	</body>
+</html>
+<script>
+	
+	function yuanzhou(p){
+		return Math.PI * p / 180;
+	}
+	//console.log(yuanzhou(360))
+	var oBox = document.getElementById("box")
+	var oBox1 = document.getElementById("box1")
+	var oBox2 = document.getElementById("box2")
+	var oBox3 = document.getElementById("box3")
+	feng(oBox,100,50,0,400,300 )
+	feng(oBox1,200,50,0,400,300 )
+	feng(oBox2,300,50,0,400,300 )
+	feng(oBox3,400,50,0,400,300 )
+	function feng(a,b,c,d,e,f){
+		function yuanzhou(p){
+		    return Math.PI * p / 180;
+	    }
+		setInterval(function(){
+			var x = b * Math.cos(yuanzhou(d)) + e;
+			var y = b * Math.sin(yuanzhou(d)) + f;
+			a.style.left = x + "px" 
+			a.style.top = y + "px" 
+			d += 10
+	    },c)
+	}
+	
+</script>
